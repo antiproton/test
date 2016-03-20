@@ -51,56 +51,60 @@
 					alert("Der Request wurde abgeschlossen, ist aber nicht OK\nFehler:"+request.status);
 				} else {
 					 content = request.responseText;
-					
-					
-					
-					 
+
+                              mydaten(content);
+
+
 				}
 				break;
 			default:
 				break;
 		}
 	}
-	
-	
+
+
   //-->
   </script>
-  
-  
-  <script type="text/javascript"> 
- 
- 
- 
 
 
-  setInterval(function(){ setRequest(); 
-  
-  // den Inhalt des Requests in das <div> schreiben
-                    document.getElementById('content').innerHTML = content; 
-  
-  
+  <script type="text/javascript">
+
+
+
+
+
+  setInterval(function(){ setRequest();
+
+
+
   var ts = Math.round((new Date()).getTime() / 1000); //timestamp
                      document.getElementById('ts').innerHTML = ts;
-  
-  
-  }, 1000);
-   
-  
-  
 
-  
-  
+
+  }, 1000);
+
+
+function mydaten(content) {
+   
+
+  // den Inhalt des Requests in das <div> schreiben
+                    document.getElementById('content').innerHTML = content;  
+   
+    return;              
+}
+
+
+
    </script>
-  
+
  </head>
  <body>
 
   <div id="content"></div><br>
-  
-  
-  
+
+
   <div id="ts"></div><br>
-  
-  
+
+
  </body>
 </html>
