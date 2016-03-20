@@ -50,25 +50,57 @@
 				if (request.status != 200) {
 					alert("Der Request wurde abgeschlossen, ist aber nicht OK\nFehler:"+request.status);
 				} else {
-					var content = request.responseText;
-					// den Inhalt des Requests in das <div> schreiben
-					document.getElementById('content').innerHTML = content;
+					 content = request.responseText;
+					
+					
+					
+					 
 				}
 				break;
 			default:
 				break;
 		}
 	}
+	
+	
   //-->
   </script>
+  
+  
+  <script type="text/javascript"> 
+ 
+ 
+ 
+
+
+  setInterval(function(){ setRequest(); 
+  
+  // den Inhalt des Requests in das <div> schreiben
+                    document.getElementById('content').innerHTML = content; 
+  
+  
+  var ts = Math.round((new Date()).getTime() / 1000); //timestamp
+                     document.getElementById('ts').innerHTML = ts;
+  
+  
+  }, 1000);
+   
+  
+  
+
+  
+  
+   </script>
+  
  </head>
  <body>
-  <ul>
-   <li><a href="javascript:setRequest('max')">Max</a></li>
-   <li><a href="javascript:setRequest('susi')">Susi</a></li>
-   <li><a href="javascript:setRequest('charly')">Charly</a></li>
-  </ul>
-  <br />
-  <div id="content"></div>
+
+  <div id="content"></div><br>
+  
+  
+  
+  <div id="ts"></div><br>
+  
+  
  </body>
 </html>
