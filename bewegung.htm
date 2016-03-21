@@ -1,0 +1,88 @@
+<!DOCTYPE html><!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+<META HTTP-EQUIV="imagetoolbar" CONTENT="no">
+<title>Drag&amp;Drop</title>
+
+<style type="text/css">
+<!--
+body {
+  padding:40px;
+}
+-->
+</style>
+</head>
+<body bgcolor="#ffffff">
+<script type="text/javascript" src="js/wz_dragdrop.js"></script>
+  <br>
+  <h3 align="center">&nbsp;</h3>
+  <p align="center">
+    <img src="images/kugel.jpeg" name="a" width="130" height="130" alt="">
+  </p>
+  <p align="center">&nbsp;
+  </p>
+  <p align="center"><img src="images/kugel.jpeg" name="b" width="130" height="130" alt="">
+  </p>
+  <p align="center">&nbsp;
+  </p>
+  <form name="myForm">
+    <center>
+      <table>
+        <tr>
+          <td align="right">name = </td>
+          <td><input name="NAME" type="text" size="12"></td>
+          <td align="right">&nbsp;&nbsp;x = </td>
+          <td><input name="X" type="text" size="12"></td>
+          <td align="right">&nbsp;&nbsp;y = </td>
+          <td><input name="Y" type="text" size="12"></td>
+        </tr>
+      </table>
+    </center>
+  </form>
+<p align="center">
+    <br>
+  </p>
+<script type="text/javascript">
+<!--
+SET_DHTML(CURSOR_MOVE, TRANSPARENT, "a", "b");
+
+// The following loop creates a copy for each of the two images,
+// but hides that copy immediately while the page is still loading
+for (var i = 0; i < 2; i++)
+{
+    dd.elements[i].copy();
+    dd.elements[i].copies[0].hide();
+}
+
+// The following two functions override their empty namesakes predefined in wz_dragdrop.js.
+// They are automatically invoked from wz_dragdrop.js when a drag operation starts
+// and ends, respectively.
+
+// Here we make the non-transparent 'placeholder' copy of the dragged image visible
+// and move it to the place where the drag operation starts
+function my_PickFunc()
+{
+    dd.obj.copies[0].moveTo(dd.obj.x, dd.obj.y);
+    dd.obj.copies[0].show();
+}
+
+// Here we hide the 'placeholder' again
+function my_DropFunc()
+{
+    dd.obj.copies[0].hide();
+
+    // Write the name and coordinates of the dropped item into form inputs:
+    document.myForm.NAME.value = dd.obj.name;
+    document.myForm.X.value = dd.obj.x;
+    document.myForm.Y.value = dd.obj.y;
+	
+	  document.getElementById('Y').innerHTML = dd.obj.y;
+}
+//-->
+</script>
+
+<div id="Y"></div><br>
+
+</body>
+</html>
