@@ -17,19 +17,10 @@ body {
 <script type="text/javascript" src="js/wz_dragdrop.js"></script>
   <br>
   <h3 align="center">&nbsp;</h3>
-  <script type="text/javascript">
+
   
-  var left = 1000;
-  var images = "<img src='images/kugel.jpeg'name='a' width='130' height='130' style='position: absolute; top:100px;  left: 500px;'>";
-  
-document.write(images);  
-  
-  
-  
-  </script>
-  
-  <p align="center">
-   
+ 
+    <div align="center"><img src="images/kugel.jpeg" name="a" width="130" height="130">
   </p>
   <p align="center">&nbsp;
   </p>
@@ -58,7 +49,7 @@ document.write(images);
 <script type="text/javascript">
 <!--
 SET_DHTML(CURSOR_MOVE, TRANSPARENT, "a", "b");
-
+dd.elements.b.moveTo(930,161); // Element wird an die richtige Stelle gesetzt
 // The following loop creates a copy for each of the two images,
 // but hides that copy immediately while the page is still loading
 for (var i = 0; i < 2; i++)
