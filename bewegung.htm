@@ -15,6 +15,8 @@ body {
 </head>
 <body bgcolor="#ffffff">
 <script type="text/javascript" src="js/wz_dragdrop.js"></script>
+<script type="text/javascript" src="js/ajax.js"></script>
+
   <br>
   <h3 align="center">&nbsp;</h3>
 
@@ -44,6 +46,42 @@ body {
     </center>
   </form>
 <p align="center">
+
+
+
+  <script type="text/javascript">
+setInterval(function(){ setRequest("daten=gggggg");
+
+ var ts = Math.round((new Date()).getTime() / 1000); //timestamp
+                     document.getElementById('ts').innerHTML = ts;
+
+  }, 1000);
+
+
+function mydaten(content) {
+
+
+  // den Inhalt des Requests in das <div> schreiben
+                    document.getElementById('content').innerHTML = content;
+
+    return;
+}
+
+   </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     <br>
 </p>
 <script type="text/javascript">
@@ -80,6 +118,9 @@ function my_DropFunc()
     document.myForm.X.value = dd.obj.x;
     document.myForm.Y.value = dd.obj.y;
 	
+
+	
+	setRequest("speichern##"+dd.obj.name+"##"+dd.obj.x+"##"+dd.obj.y);
 	  //document.getElementById('Y').innerHTML = dd.obj.y;
 }
 //-->
@@ -88,6 +129,11 @@ function my_DropFunc()
 
 
 <div id="Y"></div><br>
+
+ <div id="content"></div><br>
+
+
+  <div id="ts"></div><br>
 
 </body>
 </html>
