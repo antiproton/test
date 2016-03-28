@@ -77,9 +77,9 @@ function mydaten(content) {
   var name = myarr[0];
   var x = myarr[1];
   var y = myarr[2];
-
-          
-			dd.elements.a.moveTo(x,y); // Element wird an die richtige Stelle gesetzt		
+ // Element wird an die richtige Stelle gesetzt		
+    if(name == "a"){dd.elements.a.moveTo(x,y);}    
+    if(name == "b"){dd.elements.b.moveTo(x,y);}  
 									
  document.getElementById('content').innerHTML = name;
     return;
