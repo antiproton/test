@@ -27,7 +27,7 @@
 			// Requestheader senden
 			request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
 			// Request senden
-			request.send('aktion='+value);
+			request.send('daten='+value);
 			// Request auswerten
 			request.onreadystatechange = interpretRequest;
 		}
@@ -52,5 +52,4 @@
 				break;
 		}
 	}
-
 

@@ -49,33 +49,6 @@ body {
 
 
 
-  <script type="text/javascript">
-setInterval(function(){ setRequest("daten=gggggg");
-
- var ts = Math.round((new Date()).getTime() / 1000); //timestamp
-                     document.getElementById('ts').innerHTML = ts;
-
-  }, 1000);
-
-
-function mydaten(content) {
-
-
-  // den Inhalt des Requests in das <div> schreiben
-                    document.getElementById('content').innerHTML = content;
-
-    return;
-}
-
-   </script>
-
-
-
-
-
-
-
-
 
 
 
@@ -87,7 +60,39 @@ function mydaten(content) {
 <script type="text/javascript">
 <!--
 SET_DHTML(CURSOR_MOVE, TRANSPARENT, "a", "b");
-dd.elements.b.moveTo(930,161); // Element wird an die richtige Stelle gesetzt
+setInterval(function(){ setRequest("restore");
+
+ var ts = Math.round((new Date()).getTime() / 1000); //timestamp
+                    // document.getElementById('ts').innerHTML = ts;
+
+  }, 1000);
+
+
+function mydaten(content) {
+
+
+  // den Inhalt des Requests in das <div> schreiben
+  
+  var myarr = content.split("##");
+  var name = myarr[0];
+  var x = myarr[1];
+  var y = myarr[2];
+
+          
+			dd.elements.a.moveTo(x,y); // Element wird an die richtige Stelle gesetzt		
+									
+ document.getElementById('content').innerHTML = name;
+    return;
+}
+
+
+
+
+
+
+
+
+
 // The following loop creates a copy for each of the two images,
 // but hides that copy immediately while the page is still loading
 for (var i = 0; i < 2; i++)
